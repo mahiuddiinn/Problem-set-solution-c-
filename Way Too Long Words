@@ -1,0 +1,38 @@
+                                              **Way Too Long Words**    
+
+Sometimes some words like "localization" or "internationalization" are so long that writing them many times in one text is quite tiresome.
+
+Let's consider a word too long, if its length is strictly more than 10 characters. All too long words should be replaced with a special abbreviation.
+
+This abbreviation is made like this: we write down the first and the last letter of a word and between them we write the number of letters between the first and the last letters. That number is in decimal system and doesn't contain any leading zeroes.
+
+Thus, "localization" will be spelt as "l10n", and "internationalization» will be spelt as "i18n".
+
+
+
+-----------------------------------------------------CODE----------------------------------------------------------------------
+
+#include<iostream>
+#include <cstring>
+#include <string>
+using namespace std;
+
+int main(){
+    int n,size[n],s;
+    string a[100];
+    cin>>n;
+    for(int i=0;i<n;i++)
+    cin>>a[i];    
+    
+    if(n>=0 && n<=100){
+    for(int i=0;i<n;i++){
+    s=a[i].size();
+    if(s>10){
+    char word[s];
+    strcpy(word,a[i].c_str());   
+    cout<<word[0]<<(s-2)<<word[s-1]<<endl;
+    }
+    else cout<<a[i]<<endl;
+    }}
+    return 0;
+}
